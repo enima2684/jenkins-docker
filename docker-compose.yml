@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+
+  jenkins:
+#    image: jenkins/jenkins:2.222.1
+    build:
+      context: .
+    ports:
+      - 8090:8080
+    volumes:
+    - jenkins_data:/var/jenkins_home
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /usr/bin/docker:/usr/bin/docker
+    deploy:
+      replicas: 1
+
+volumes:
+  jenkins_data:
