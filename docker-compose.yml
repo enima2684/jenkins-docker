@@ -3,7 +3,7 @@ version: "3.3"
 services:
 
   jenkins:
-    image: aminebouamama/jenkins-docker:latest
+    image: virussauron/jenkins-docker:latest
     build: .
     ports:
       - 7100:7100
