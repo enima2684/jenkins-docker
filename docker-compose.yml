@@ -13,6 +13,9 @@ services:
       - DOCKER_HOST=tcp://192.168.1.88:2375
     deploy:
       replicas: 1
+      placement:
+        constraints:
+          - "node.labels.machine==ci01"
 
 volumes:
   jenkins_data:
