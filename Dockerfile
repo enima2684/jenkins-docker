@@ -36,4 +36,7 @@ RUN bash ./install-buildx.sh
 ## Install additional python dependencies
 RUN pip3 install click pyyaml docker
 
-CMD  ["java", "-jar", "/opt/jenkins/jenkins.war", "--httpPort=7100"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+CMD  ["bash", "/entrypoint.sh"]
