@@ -29,6 +29,7 @@ RUN apt-get update && \
     pip3 install docker-compose
 
 ## Install Docker buildx
+ENV DOCKER_CLI_EXPERIMENTAL=enabled
 COPY install-buildx.sh .
 RUN bash ./install-buildx.sh
 
