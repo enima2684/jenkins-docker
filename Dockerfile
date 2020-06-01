@@ -28,6 +28,11 @@ RUN apt-get update && \
     apt-get remove python-configparser && \
     pip3 install docker-compose
 
+## Install Docker buildx
+COPY install-buildx.sh .
+RUN bash ./install-buildx.sh
+
+## Install additional python dependencies
 RUN pip3 install click pyyaml docker
 
 CMD  ["java", "-jar", "/opt/jenkins/jenkins.war", "--httpPort=7100"]
