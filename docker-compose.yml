@@ -10,7 +10,7 @@ services:
     volumes:
     - jenkins_data:/var/jenkins_home
     environment:
-      - DOCKER_HOST=tcp://192.168.1.88:2375
+      - DOCKER_HOST=tcp://192.168.1.32:2375
     deploy:
       replicas: 1
       placement:
