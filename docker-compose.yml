@@ -4,7 +4,10 @@ services:
 
   jenkins:
     image: virussauron/jenkins-docker:latest
-    build: .
+    build:
+      context: .
+      args:
+        - DOCKER_HOST=tcp://192.168.1.32:2375
     ports:
       - 7100:7100
     volumes:
