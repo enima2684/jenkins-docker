@@ -19,7 +19,7 @@ services:
       placement:      
         constraints:
           - "node.role==manager"
-          - "node.platform.arch==arm64"
+          - "node.platform.arch==aarch64"
 
 volumes:
   jenkins_data:
