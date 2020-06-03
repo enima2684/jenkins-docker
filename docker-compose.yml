@@ -16,9 +16,10 @@ services:
       - DOCKER_HOST=tcp://192.168.1.32:2375
     deploy:
       replicas: 1
-      constraints:
-        - "node.role==manager"
-        - "node.platform.arch==arm64"
+      placement:      
+        constraints:
+          - "node.role==manager"
+          - "node.platform.arch==aarch64"
 
 volumes:
   jenkins_data:
