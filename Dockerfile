@@ -30,12 +30,8 @@ RUN apt-get update && \
     apt-get remove python-configparser && \
     pip3 install docker-compose
 
-## Install Docker buildx
+## Activate experimentla features to access `manifest`
 ENV DOCKER_CLI_EXPERIMENTAL=enabled
-ENV DOCKER_BUILDKIT=1
-RUN git clone https://github.com/enima2684/buildx.git && \
-    cd buildx && \
-    make install
 
 ## Install additional python dependencies
 RUN pip3 install click pyyaml docker
@@ -43,4 +39,4 @@ RUN pip3 install click pyyaml docker
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-CMD  ["bash", "/entrypoint.sh"]
+CMD  ["/entrypoint.sh"]
